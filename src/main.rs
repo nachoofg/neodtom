@@ -1,8 +1,8 @@
-#![allow(unused_must_use)]
-extern crate sysinfo; // importa la libreria, al no ser local hay que usar 'extern crate'
-use chrono::{Local, NaiveDateTime};
-use sysinfo::{Disks, System}; // importa System de sysinfo
-mod windows;
+#![allow(unused_must_use)] 
+extern crate sysinfo;
+use chrono::{Local, NaiveDateTime}; 
+use sysinfo::{Disks, System}; 
+mod windows; 
 
 async fn display() {
     let shell: String = windows::fetch_latest_ps_version();
@@ -26,10 +26,10 @@ async fn display() {
     let architecture: &str = binding.as_deref().expect("wtf");
     let binding: Option<String> = System::host_name();
     let hostname: &str = binding.as_deref().expect("wtf");
-    let mut sys: System = System::new_all(); // Esto se usa para loguear todos los datos
+    let mut sys: System = System::new_all(); 
     let mut disks_info: String = String::new();
     let disks: Disks = Disks::new_with_refreshed_list();
-    sys.refresh_all(); // Esto es para renovar los datos al ultimo momento
+    sys.refresh_all(); 
 
     println!("Host       : {}", hostname);
     println!("OS         : {} {}", osname, architecture);

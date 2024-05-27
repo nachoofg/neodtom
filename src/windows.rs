@@ -130,4 +130,4 @@ pub struct Win32_VideoController {
 pub struct Win32_LogicalDisk {
     pub device_id: String,
     pub size: u64,
-}
+} 
